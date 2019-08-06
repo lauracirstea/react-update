@@ -310,6 +310,7 @@ export default class Users extends Component {
 							<Label for={this.nextUniqueId()}>Picture:</Label>
 							<Upload uploadedFile={users.picture} onFileUpload={this._onUsersPictureUpload} />
 						</FormGroup>
+
 						<FormGroup>
 							<Label for={this.nextUniqueId()}>Type</Label>
 							<Input

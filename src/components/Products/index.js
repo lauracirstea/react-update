@@ -191,8 +191,7 @@ export default class Products extends Component {
                 description: item.description,
                 category_id: item.category_id,
                 full_price: item.full_price,
-                photo: '',
-                old_photo: item.photo,
+                photo: item.photo,
                 quantity: item.quantity
             },
             showModal: true,
@@ -418,7 +417,9 @@ export default class Products extends Component {
                         <PaginationItem>
                             <PaginationLink first={"true"} {...(pagination.currentPage === 1 ? {
                                 disabled: true
-                            } : {})} onClick={() => this._onPageChange(1)}/>
+                            } : {})} onClick={() => this._onPageChange(1)}>
+                                <span><i className="fa fa-angle-left"></i></span>
+                            </PaginationLink>
                         </PaginationItem>
 
                         <PaginationItem>
@@ -435,7 +436,9 @@ export default class Products extends Component {
                         <PaginationItem>
                             <PaginationLink last={"true"} {...(pagination.currentPage === pagination.totalPages ? {
                                 disabled: true
-                            } : {})} onClick={() => this._onPageChange(pagination.totalPages)}/>
+                            } : {})} onClick={() => this._onPageChange(pagination.totalPages)} >
+                                <span><i className="fa fa-angle-right"></i></span>
+                            </PaginationLink>
                         </PaginationItem>
                     </Pagination>
 
